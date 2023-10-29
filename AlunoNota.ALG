@@ -1,3 +1,4 @@
+
 Algoritmo "AcharLutaNota"
 // Disciplina   : [Linguagem e Lógica de Programação]
 // Professor   : Antonio Carlos Nicolodi
@@ -8,7 +9,9 @@ Var
    a : vetor[1..4 , 1..4]  de caractere
    n : vetor[1..4 , 1..4]  de inteiro
    m : vetor[1..4] de inteiro
-   i , j , ae : inteiro
+   i , j : inteiro
+   ae : inteiro
+   acha : logico
      //a=aluno
      //n=nota
      //m=media
@@ -27,15 +30,20 @@ Inicio
               j <- 1
               i <- i + 1
            fimpara
-           para i de 1 até 4 passo 1 faça
-           m[i] <- m + i
-           fimpara
-           escreva("nome do aluno")
+           escreval("nome do aluno")
            leia(ae)
-           para i de 1 até 4 passo 1 faça
-                ae = a[i]
-                escreva("aluno existente")
-           fim para
-           
+           acha <- falso
+           enquanto (i <= 4) e (acha = falso) faça
+                    se (ae = a[i]) então
+                    acha <- verdadeiro
+                    senão
+                    i <- i + 1
+                    fimse
+           fimenquanto
+           se (acha = verdadeiro) então
+              escreval("aluno encontrado")
+           senão
+                escreval("aluno inexistente")
+           fimse
 
 Fimalgoritmo
